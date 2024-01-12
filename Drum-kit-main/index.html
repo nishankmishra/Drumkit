@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon1.webp">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="./index.js" defer></script>
+    
+    <title>Drum Kit</title>
+</head>
+<body>
+    <div class="drum">
+        <div data-key="97" class="kit "><h6>A</h6><p>CLAP</p></div>
+        <div data-key="115" class="kit"><h6>S</h6><p>HIHAT</p></div>
+        <div data-key="100" class="kit"><h6>D</h6><p>KICK</p></div>
+        <div data-key="102" class="kit"><h6>F</h6><p>OPENHAT</p></div>
+        <div data-key="103" class="kit"><h6>G</h6><p>BOOM</p></div>
+        <div data-key="104" class="kit"><h6>H</h6><p>RIDE</p></div>
+        <div data-key="106" class="kit"><h6>J</h6><p>SNARE</p></div>
+        <div data-key="107" class="kit"><h6>K</h6><p>TOM</p></div>
+        <div data-key="108" class="kit"><h6>L</h6><p>TINK</p></div>
+    </div>
+
+
+    <audio data-key="97" src="./sounds/clap.wav"></audio>
+    <audio data-key="115" src="./sounds/hihat.wav"></audio>
+    <audio data-key="100" src="./sounds/kick.wav"></audio>
+    <audio data-key="102" src="./sounds/openhat.wav"></audio>
+    <audio data-key="103" src="./sounds/boom.wav"></audio>
+    <audio data-key="104" src="./sounds/ride.wav"></audio>
+    <audio data-key="106" src="./sounds/snare.wav"></audio>
+    <audio data-key="107" src="./sounds/tom.wav"></audio>
+    <audio data-key="108" src="./sounds/tink.wav"></audio>
+
+    <script>
+        // Array of image URLs
+        const images = [
+          'Background2.jpg',
+          'Background3.jpg',
+          // Add more image URLs as needed
+        ];
+      
+        // Function to shuffle the array
+        function shuffleArray(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+      
+        // Function to set a random background image
+        function setRandomBackground() {
+          shuffleArray(images);
+          const randomImage = images[0];
+          document.body.style.backgroundImage = `url(${randomImage})`;
+        }
+      
+        // Set initial background
+        setRandomBackground();
+      
+      </script>
+</body>
+</html>
